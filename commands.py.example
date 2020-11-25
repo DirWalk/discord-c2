@@ -1,0 +1,7 @@
+"""
+List of authorized commands.
+"""
+
+AUTHORIZED_COMMANDS = [
+    'echo hello'
+]
