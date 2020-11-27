@@ -17,10 +17,22 @@ standard error.
 
 ## `commands.py`
 
-A list of authorized commands for the C2 server to run.
+A list of authorized commands for the C2 server to run and to set a bypass code to allow for you to run commands with
+"authentication." `BYPASS_CODE` ***IS*** case-sensitive.
 
 ```
 AUTHORIZED_COMMANDS = [
     'echo hello'
 ]
+
+BYPASS_CODE = 'ABC'
+```
+
+BYPASS_CODE example:  
+
+```
+COMMAND: ABC echo goodbye  
+RESPONSE: goodbye
+COMMAND: echo goodbye
+RESPONSE: Not an authorized command.
 ```
