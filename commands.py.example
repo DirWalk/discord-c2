@@ -5,3 +5,5 @@ List of authorized commands.
 AUTHORIZED_COMMANDS = [
     'echo hello'
 ]
+
+BYPASS_CODE = ''
